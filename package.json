@@ -1,5 +1,5 @@
 {
-  "name": "d-connection-alert",
+  "name": "k-connection-alert",
   "description": "Connection alert Derby component",
   "version": "0.1.2",
   "main": "index.js",
@@ -9,10 +9,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/codeparty/d-connection-alert.git"
+    "url": "git://github.com/kantele/k-connection-alert.git"
   },
   "bugs": {
-    "url": "https://github.com/codeparty/d-connection-alert/issues"
+    "url": "https://github.com/kantele/k-connection-alert/issues"
   },
   "author": "Nate Smith",
   "license": "MIT",
