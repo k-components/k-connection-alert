@@ -1,4 +1,4 @@
 d-connection-alert
 ==================
 
-Connection alert Derby component
+Connection alert Derby/Kantele component
