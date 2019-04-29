@@ -5,7 +5,10 @@ module.exports = class ConnectionAlert
     @model.root.removeAllListeners 'change', '$connection.state'
 
   create: ->
+    @model.set 'hideReconnect', true
     @model.root.on 'change', '$connection.state', @changed
+
+    setTimeout (=> @model.del('hideReconnect')), 300
 
   changed: (state) =>
     self = this
