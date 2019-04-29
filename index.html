@@ -1,5 +1,5 @@
 <index:>
-  {{if #root.$connection.state !== 'connected' && !hideReconnect}}
+  {{if #root.$connection.state !== 'connected' && showReconnect}}
     <div class="connection">
       <p class="alert alert-warning">
         {{if #root.$connection.state === 'stopped'}}

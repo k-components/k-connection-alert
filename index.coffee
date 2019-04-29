@@ -5,27 +5,19 @@ module.exports = class ConnectionAlert
     @model.root.removeAllListeners 'change', '$connection.state'
 
   create: ->
-    @model.set 'hideReconnect', true
     @model.root.on 'change', '$connection.state', @changed
-
-    setTimeout (=> @model.del('hideReconnect')), 300
+    setTimeout (=> @model.set('showReconnect', 1)), 3000
 
   changed: (state) =>
-    self = this
     if state == 'disconnected'
-      @model.set 'hideReconnect', true
-      setTimeout (->
-        self.model.del 'hideReconnect'
-      ), 1000
+      @model.del 'showReconnect'
+      setTimeout (=> @model.set 'showReconnect', 1), 3000
 
   reconnect: ->
-    model = @model
     # Hide the reconnect link for a second after clicking it
-    model.set 'hideReconnect', true
-    setTimeout (->
-      model.del 'hideReconnect'
-    ), 1000
-    model.reconnect()
+    @model.del 'showReconnect'
+    setTimeout (=> @model.set 'showReconnect', 1), 1000
+    @model.reconnect()
 
   reload: ->
     window.location.reload()
